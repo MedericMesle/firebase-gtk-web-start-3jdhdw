@@ -4,7 +4,7 @@ import './style.css';
 import { initializeApp } from 'firebase/app';
 
 // Add the Firebase products and methods that you want to use
-import {} from 'firebase/auth';
+import { getAuth, EmailAuthProvider} from 'firebase/auth';
 import {} from 'firebase/firestore';
 
 import * as firebaseui from 'firebaseui';
@@ -38,6 +38,9 @@ async function main() {
 
   initializeApp(firebaseConfig);
 
+  initializeApp(firebaseConfig);
+  auth = getAuth();
+
   // FirebaseUI config
   const uiConfig = {
     credentialHelper: firebaseui.auth.CredentialHelper.NONE,
@@ -55,5 +58,11 @@ async function main() {
   };
 
   // const ui = new firebaseui.auth.AuthUI(auth);
+  async function main() {
+    // ...
+  
+    // Initialize the FirebaseUI widget using Firebase
+    const ui = new firebaseui.auth.AuthUI(auth);
+  }
 }
 main();
